@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
     ruby's Singleton module, the same object is always available throughout your application.
   EOF
   gem.summary       = %q{A container for storing objects and values in the application as long as the request lives.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/nebiros/registry-rails"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
