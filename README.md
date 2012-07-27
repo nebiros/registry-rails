@@ -36,8 +36,8 @@ register.get(:colors) #=> ["green", "white", "blue"]
 register.get(:baz, "default_value") #=> "default_value"
 ````
 
-The original issue was this: How to get the `current_user` data inside a model?, so I ended up
-with this gem, so, now the example.
+The original issue was: How to get the `current_user` data inside a model?, so I ended up
+with this gem, so, now, the example.
 
 ````ruby
 class ApplicationController < ActionController::Base
@@ -54,7 +54,7 @@ end
 class Foo < ActiveRecord::Base
   def self.do_something(options = {})
     register = Registry::Rails::Register.instance
-    register.get(:current_user)
+    current_user_data = register.get(:current_user)
   end
 end
 ````
