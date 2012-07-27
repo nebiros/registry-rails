@@ -20,6 +20,7 @@ module Registry
 
       def set(key, value = nil)
         @registry[key.to_s] = value
+        self
       end
 
       def get(key, default = nil)

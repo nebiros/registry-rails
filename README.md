@@ -1,12 +1,13 @@
 # Registry::Rails
 
-TODO: Write a gem description
+A container for storing objects and values in the application as long as the request lives. Registry implements
+ruby's Singleton module, the same object is always available throughout your application.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'registry-rails'
+    gem "registry-rails"
 
 And then execute:
 
@@ -18,7 +19,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+````ruby
+register = Registry::Rails::Register.instance
+register.set(:foo, "bar")
+register.set(:colors, ["green", "white", "blue"])
+````
+
+````ruby
+register = Registry::Rails::Register.instance
+register.get(:foo) #=> "bar"
+register.get(:colors) #=> ["green", "white", "blue"]
+register.get(:baz, "default_value") #=> "default_value"
+````
+
+````ruby
+class ApplicationController < ActionController::Base
+  before_filter :set_current_user
+
+  def set_current_user
+    register = Registry::Rails::Register.instance
+    register.set(:current_user, current_user)
+  end
+end
+````
 
 ## Contributing
 
