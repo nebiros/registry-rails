@@ -17,5 +17,5 @@ Gem::Specification.new do |gem|
   gem.name          = "registry-rails"
   gem.require_paths = ["lib"]
   gem.version       = Registry::Rails::VERSION
-  gem.add_runtime_dependency "rails", "~> 3.1"
+  gem.add_runtime_dependency "rails", "~> 4.1"
 end
